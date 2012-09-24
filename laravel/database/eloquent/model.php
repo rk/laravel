@@ -534,7 +534,7 @@ abstract class Model {
 	 */
 	public function get_key()
 	{
-		return $this->get_attribute(static::$key);
+		return array_get($this->original, static::$key);
 	}
 
 	/**
