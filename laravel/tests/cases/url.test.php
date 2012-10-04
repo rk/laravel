@@ -127,4 +127,14 @@ class URLTest extends PHPUnit_Framework_TestCase {
 		Config::set('application.languages', array());
 	}
 
+	/**
+	 * Tests that protocol-less URLs now validate as valid.
+	 *
+	 * @group laravel
+	 **/
+	public function testProtocolLessURLs()
+	{
+		$this->assertTrue(URL::valid('//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js'));
+	}
+
 }
